@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= pageTitle %> </title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <ul>
+                    <li> <a href="/">User List</a> </li>
+                    <li> <a href="admin/add-user">Add-User</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="add_user">
+        <div class="container">
+            <div class="content">
+                <% if(users.length > 0) { %>
+               <div>
+                <h1> User List </h1>
+                <ul>
+                    <% for(let user of users) { %>
+                    <li> <%= user.name %> <%= user.surname %> </li>
+                    <% } %>
+                </ul>
+               </div>
+               <% } else { %>
+                <h1> No users </h1>
+                <% } %>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
